@@ -14,6 +14,11 @@ gem 'puma', '>= 5.0'
 # For image manipulation
 gem "image_processing", ">= 1.2"
 
+# For Auth
+gem 'bcrypt', '~> 3.1.7'
+gem 'rack-cors'
+gem 'jwt'
+
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 # gem "jbuilder"
 
