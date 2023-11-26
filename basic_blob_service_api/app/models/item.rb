@@ -1,4 +1,6 @@
 class Item < ApplicationRecord
+  belongs_to :user
+
   has_one_attached :item_image do |attachable|
     attachable.variant :default_variant, rotate: [0]
     attachable.variant :thumb, resize_to_limit: [100, 100]
