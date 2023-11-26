@@ -1,0 +1,102 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  "/items":
+    post:
+      summary: Creates an item
+      tags:
+      - Items
+      parameters: []
+      responses:
+        '201':
+          description: item created
+        '422':
+          description: invalid request
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                item_image:
+                  type: string
+                  format: binary
+              required:
+              - item_image
+  "/items/{id}":
+    get:
+      summary: Retrieves an item
+      tags:
+      - Items
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: item found
+        '404':
+          description: item not found
+    delete:
+      summary: Deletes an item
+      tags:
+      - Items
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: item deleted
+        '404':
+          description: item not found
+  "/users":
+    post:
+      summary: Logs in a user
+      tags:
+      - Users
+      parameters: []
+      responses:
+        '201':
+          description: user created
+        '422':
+          description: invalid credentials
+        '200':
+          description: user logged in
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                password:
+                  type: string
+              required:
+              - username
+              - password
+  "/auto_login":
+    get:
+      summary: Auto login
+      tags:
+      - Users
+      security:
+      - Bearer: []
+      responses:
+        '200':
+          description: returns the logged-in user
+        '401':
+          description: unauthorized
+servers:
+- url: https://{defaultHost}
+  variables:
+    defaultHost:
+      default: www.example.com

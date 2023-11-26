@@ -75,6 +75,8 @@ GEM
       minitest (>= 5.1)
       mutex_m
       tzinfo (~> 2.0)
+    addressable (2.8.5)
+      public_suffix (>= 2.0.2, < 6.0)
     base64 (0.2.0)
     bcrypt (3.1.20)
     bigdecimal (3.1.4)
@@ -88,6 +90,7 @@ GEM
     debug (1.8.0)
       irb (>= 1.5.0)
       reline (>= 0.3.1)
+    diff-lcs (1.5.0)
     drb (2.2.0)
       ruby2_keywords
     error_highlight (0.5.1)
@@ -104,6 +107,8 @@ GEM
     irb (1.9.1)
       rdoc
       reline (>= 0.3.8)
+    json-schema (4.1.1)
+      addressable (>= 2.8)
     jwt (2.7.1)
     loofah (2.22.0)
       crass (~> 1.0.2)
@@ -134,6 +139,7 @@ GEM
     pg (1.1.4)
     psych (5.1.1.1)
       stringio
+    public_suffix (5.0.4)
     puma (6.4.0)
       nio4r (~> 2.0)
     racc (1.7.3)
@@ -181,6 +187,37 @@ GEM
       psych (>= 4.0.0)
     reline (0.4.0)
       io-console (~> 0.5)
+    rspec-core (3.9.3)
+      rspec-support (~> 3.9.3)
+    rspec-expectations (3.9.4)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.9.0)
+    rspec-mocks (3.9.1)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.9.0)
+    rspec-rails (3.9.1)
+      actionpack (>= 3.0)
+      activesupport (>= 3.0)
+      railties (>= 3.0)
+      rspec-core (~> 3.9.0)
+      rspec-expectations (~> 3.9.0)
+      rspec-mocks (~> 3.9.0)
+      rspec-support (~> 3.9.0)
+    rspec-support (3.9.4)
+    rswag (2.12.0)
+      rswag-api (= 2.12.0)
+      rswag-specs (= 2.12.0)
+      rswag-ui (= 2.12.0)
+    rswag-api (2.12.0)
+      railties (>= 3.1, < 7.2)
+    rswag-specs (2.12.0)
+      activesupport (>= 3.1, < 7.2)
+      json-schema (>= 2.2, < 5.0)
+      railties (>= 3.1, < 7.2)
+      rspec-core (>= 2.14)
+    rswag-ui (2.12.0)
+      actionpack (>= 3.1, < 7.2)
+      railties (>= 3.1, < 7.2)
     ruby-vips (2.2.0)
       ffi (~> 1.12)
     ruby2_keywords (0.0.5)
@@ -209,6 +246,11 @@ DEPENDENCIES
   puma (>= 5.0)
   rack-cors
   rails (~> 7.1.2)
+  rspec-rails (~> 3.5)
+  rswag
+  rswag-api
+  rswag-specs
+  rswag-ui
   tzinfo-data
 
 RUBY VERSION
